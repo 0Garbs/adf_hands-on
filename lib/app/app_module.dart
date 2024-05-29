@@ -1,4 +1,5 @@
 import 'package:app/app/app_widget.dart';
+import 'package:app/app/core/database/sqlite_connection_factory.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -13,7 +14,10 @@ class AppModule extends StatelessWidget {
     // Base struct of our Project
     return MultiProvider(
       providers: [
-        Provider(create: (_) => Object()),
+        Provider(
+          create: (_) => SqliteConnectionFactory(),
+          lazy: false, // when create the create or update the DB instantly
+        ),
       ],
       // Stateful wiget to inject dependencies
       child: const AppWidget(),
