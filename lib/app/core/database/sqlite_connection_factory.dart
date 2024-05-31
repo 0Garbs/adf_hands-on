@@ -1,4 +1,3 @@
-import 'package:app/app/core/database/migrations/migration.dart';
 import 'package:app/app/core/database/sqlite_migration_factory.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
